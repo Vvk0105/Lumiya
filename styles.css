@@ -15,6 +15,18 @@
     border: 0;
 }
 
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  user-select: none;
+}
+
+[data-scroll-container] {
+  min-height: 100vh;
+}
+
 body {
     font-family: Vogun;
     background-color: #000;
@@ -24,8 +36,9 @@ body {
 }
 
 nav {
-    position: relative;
-    z-index: 50;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
 }
 
 .nav-container {
@@ -446,7 +459,7 @@ nav {
     border-top-left-radius: 115px;
     border-top-right-radius: 115px;
     position: relative;
-    z-index: 2;
+    z-index: 10;
     margin-top: -100px;
 }
 
