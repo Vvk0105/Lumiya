@@ -17,6 +17,7 @@
 
 html.has-scroll-smooth {
   overflow: hidden;
+  height: 100%;
 }
 
 html.has-scroll-dragging {
@@ -25,6 +26,7 @@ html.has-scroll-dragging {
 
 [data-scroll-container] {
   min-height: 100vh;
+  overflow: hidden;
 }
 
 body {
@@ -646,9 +648,7 @@ nav {
 
 /* social event styles  */
 .social-events {
-    background-color: #000;
     padding: 4rem 2rem;
-    color: #fff;
 }
 
 .social-events-content h2{
@@ -667,7 +667,6 @@ nav {
     line-height: 1.8;
     color: #fff;
     text-align: justify;
-
 }
 
 /* social event grid layout  */
@@ -733,8 +732,54 @@ nav {
 
 /* corporate-gift design  */
 
+.corporate-gifts {
+    padding: 4rem 2rem;
+}
 
+.corporate-gifts-content h2{
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 1.1;
+}
 
+.corporate-gifts-content p{
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    font-family: PlusJakartaSans;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #fff;
+    text-align: justify;
+}
+
+/* corporate-gifts grid style  */
+.corporate-gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 167px);
+    grid-template-rows: repeat(1, 300px);
+    gap: 15px;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 2rem;
+    padding: 0 5rem;
+}
+
+.gifts-grid-1{
+    grid-column: 1/4;
+    grid-row: 1;
+}
+
+.gifts-grid-2{
+    grid-column: 4/6;
+    grid-row: 1;
+}
+
+.gifts-grid-3{
+    grid-column: 6;
+    grid-row: 1;
+}
 /* Footer Section Styles */
 .footer-section {
     background-color: black;
