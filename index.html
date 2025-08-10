@@ -48,7 +48,7 @@
     </div>
 
 
-     <div class="associated-wrapper">
+    <div class="associated-wrapper">
         <div class="associated-container">
             <h2>Associated With</h2>
             
@@ -70,6 +70,26 @@
         </div>
     </div>
 
+    <!-- Video Section -->
+    <div class="video-section">
+        <h2>Drag Here</h2>
+        <div class="video-container">
+            <div class="video-wrapper">
+                <video id="promo" autoplay loop muted playsinline>
+                    <source src="videos/promo-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+    document.addEventListener("click", () => {
+        let video = document.getElementById("promo");
+        video.muted = false;
+        video.play();
+    }, { once: true });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
