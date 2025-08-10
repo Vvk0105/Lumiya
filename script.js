@@ -1,18 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize Locomotive Scroll
-  const scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    smooth: true,
-    multiplier: 0.8,
-    smartphone: {
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  
+  // Only initialize Locomotive Scroll on desktop
+  let scroll;
+  if (!isMobile) {
+    scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
       smooth: true,
-      breakpoint: 768
-    },
-    tablet: {
-      smooth: true,
-      breakpoint: 1024
-    }
-  });
+      multiplier: 0.8,
+      smartphone: {
+        smooth: false // Disable on mobile
+      }
+    });
+  }
+
 
   // Update scroll instance
   function updateScroll() {
