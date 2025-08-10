@@ -75,21 +75,62 @@
         <h2>Drag Here</h2>
         <div class="video-container">
             <div class="video-wrapper">
-                <video id="promo" autoplay loop muted playsinline>
+                <video id="main-video" loop playsinline preload="none" poster="videos/poster.jpg">
                     <source src="videos/promo-video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                <div class="video-overlay">
+                    <button class="play-button">▶ Play Video</button>
+                </div>
             </div>
         </div>
-        
     </div>
-    <script>
-    document.addEventListener("click", () => {
-        let video = document.getElementById("promo");
-        video.muted = false;
-        video.play();
-    }, { once: true });
-    </script>
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const video = document.getElementById('main-video');
+        const overlay = document.querySelector('.video-overlay');
+        const playButton = document.querySelector('.play-button');
+        let hasInteracted = false;
+
+        playButton.addEventListener('click', () => {
+            overlay.style.display = 'none';
+            video.play().then(() => {
+                hasInteracted = true;
+                setupObserver();
+            }).catch(e => {
+                overlay.style.display = 'flex';
+                console.error('Playback failed:', e);
+            });
+        });
+
+        function setupObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && hasInteracted) {
+                        video.muted = false;
+                        video.play().catch(e => console.log('Playback error:', e));
+                    } else {
+                        video.muted = true;
+                        if (!video.paused) video.pause();
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(video);
+        }
+
+        const loadObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video.load();
+                    loadObserver.unobserve(video);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        loadObserver.observe(video);
+    });
+</script>
     <script src="script.js"></script>
 </body>
 </html>
