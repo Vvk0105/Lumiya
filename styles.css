@@ -854,32 +854,9 @@ nav {
     position: relative;
 }
 
-.form-group input {
-    width: 100%;
-    padding: 1rem 1rem;
-    background: transparent;
-    background-color: #C5C5C559;
-    border-radius: 10px;
-    color: white;
-    font-family: PlusJakartaSans;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease;
-}
 
 .form-group input:focus {
     border-bottom-color: white;
-}
-
-.form-group label {
-    position: absolute;
-    left: 0;
-    top: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-family: PlusJakartaSans;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    pointer-events: none;
 }
 
 .form-group input:focus + label,
@@ -888,7 +865,7 @@ nav {
     font-size: 0.8rem;
     color: white;
 }
-
+/* 
 .submit-btn {
     background: white;
     color: black;
@@ -906,7 +883,7 @@ nav {
     align-items: center;
     width: 80%;
     border-radius: 10px;
-}
+} */
 
 .submit-btn:hover {
     background: rgba(255, 255, 255, 0.8);
@@ -945,6 +922,93 @@ nav {
     
     .form-container {
         padding: 1.5rem;
+    }
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-container h1 {
+    font-family: Vogun;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.contact-tagline {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: #C5C5C559;
+    color: white;
+    font-family: vogun;
+    font-size: 1rem;
+    border-radius: 14px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #bdbdbd;
+    font-weight: 500;
+}
+
+.form-group textarea {
+    color: #bdbdbd;
+    font-weight: 500;
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: Vogun;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 80%;
+    margin: 1rem auto 0;
+    border-radius: 6px;
+}
+
+.submit-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+    .contact-container h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-tagline {
+        font-size: 1rem;
+    }
+    
+    .contact-form {
+        gap: 1rem;
     }
 }
 
