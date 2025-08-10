@@ -75,12 +75,12 @@
         <h2>Drag Here <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path style="fill:#fff" d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z" data-name="Right"/></svg></h2>
         <div class="video-container">
             <div class="video-wrapper">
-                <video id="main-video" loop playsinline preload="none" poster="videos/poster.jpg">
+                <video id="main-video" loop playsinline preload="none" poster="videos/poster.jpg" muted>
                     <source src="videos/promo-video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <div class="video-overlay">
-                    <button class="play-button">▶ Play Video</button>
+                <div class="video-controls">
+                    <button class="unmute-button">🔇</button>
                 </div>
             </div>
         </div>
@@ -136,52 +136,51 @@
     </footer>
 
 
-   <script>
+    <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const video = document.getElementById('main-video');
-        const overlay = document.querySelector('.video-overlay');
-        const playButton = document.querySelector('.play-button');
-        let hasInteracted = false;
+    const video = document.getElementById('main-video');
+    const unmuteButton = document.querySelector('.unmute-button');
+    let isMuted = true;
+    let hasInteracted = false;
 
-        playButton.addEventListener('click', () => {
-            overlay.style.display = 'none';
-            video.play().then(() => {
-                hasInteracted = true;
-                setupObserver();
-            }).catch(e => {
-                overlay.style.display = 'flex';
-                console.error('Playback failed:', e);
-            });
-        });
-
-        function setupObserver() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && hasInteracted) {
-                        video.muted = false;
-                        video.play().catch(e => console.log('Playback error:', e));
-                    } else {
-                        video.muted = true;
-                        if (!video.paused) video.pause();
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            observer.observe(video);
-        }
-
-        const loadObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    video.load();
-                    loadObserver.unobserve(video);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                video.play().catch(e => console.log('Autoplay prevented:', e));
+                if (!hasInteracted) {
+                    video.muted = true;
                 }
-            });
-        }, { threshold: 0.1 });
+            } else {
+                if (!video.paused) video.pause();
+            }
+        });
+    }, { threshold: 0.5 });
 
-        loadObserver.observe(video);
+    observer.observe(video);
+
+    unmuteButton.addEventListener('click', () => {
+        isMuted = !isMuted;
+        video.muted = isMuted;
+        unmuteButton.classList.toggle('unmuted', !isMuted);
+        hasInteracted = true;
+        
+        if (!isMuted && video.paused) {
+            video.play().catch(e => console.log('Play failed:', e));
+        }
     });
-</script>
+
+    const loadObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                video.load();
+                loadObserver.unobserve(video);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    loadObserver.observe(video);
+    });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

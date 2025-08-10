@@ -361,6 +361,39 @@ nav {
     background-color: rgba(255,255,255,0.3);
 }
 
+.video-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3;
+}
+
+.unmute-button {
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid white;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.unmute-button:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.unmute-button.unmuted {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.unmute-button.unmuted::before {
+    content: "🔊";
+}
+
 /* About Us Section Styles */
 .about-section {
     background-image: url('images/bottom-banner.jpg');
