@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corporate Events</title>
+    <title>Join Our Team | Lumiya</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,83 +18,47 @@
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="services.html" class="nav-link">Services</a>
-                <a href="ambassador.html" class="nav-link">Ambassador</a>
+                <a href="#" class="nav-link">Ambassador</a>
                 <a href="#" class="nav-link">Contacts</a>
             </div>
         </div>
     </nav>
     <main id="main-scroll-container" data-scroll-container>
-        <div class="banner">
-            <div class="banner-content">
-                <h1>Corporate Events</h1>
-                <p>MICE (Meetings, Incentives, Conferences & Exhibitions), Product Launches, Team-Building Retreat, Corporate Giftings - all executed with Professionalism and Style.</p>
-                <button>Know More</button>
+        <div class="ambassador-hero">
+            <div class="video-background">
+                <video autoplay muted loop playsinline>
+                    <source src="videos/promo-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay"></div>
             </div>
-            <div class="scrolling-text-container">
-                <div class="scrolling-text">
-                    <h2>Corporate Event</h2>
-                    <h2>Corporate Gift</h2>
-                    <h2>Social Events</h2>
-                    <h2>Corporate Event</h2>
-                    <h2>Corporate Gift</h2>
-                    <h2>Social Events</h2>
-                    <h2>Corporate Event</h2>
-                    <h2>Corporate Gift</h2>
-                    <h2>Social Events</h2>
-                    <h2>Corporate Event</h2>
-                    <h2>Corporate Gift</h2>
-                    <h2>Social Events</h2>
-                </div>
-            </div>
-        </div>
-    
-    
-        <div class="associated-wrapper">
-            <div class="associated-container">
-                <h2>Associated With</h2>
-                
-                <div class="logo-scroll-container">
-                    <div class="logo-scroll-track">
-                        <div class="logo-scroll-ltr">
-                           
+            
+            <div class="ambassador-content">
+                <div class="form-container">
+                    <h1>Join our team</h1>
+                    <form id="ambassador-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Enter your name*" required>
+                            <!-- <label for="name">Enter your name*</label> -->
                         </div>
-                    </div>
-                </div>
-                
-                <div class="logo-scroll-container">
-                    <div class="logo-scroll-track">
-                        <div class="logo-scroll-rtl">
-                           
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Enter your Email ID*" required>
+                            <!-- <label for="email">Enter your Email ID*</label> -->
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your Phone number*" required>
+                            <!-- <label for="phone">Enter your Phone number</label> -->
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="address" name="address" placeholder="Enter your Address*" required>
+                            <!-- <label for="phone">Enter your Phone number</label> -->
+                        </div>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
-    
-        <!-- Video Section -->
-        <div class="video-section">
-            <h2>Drag Here <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path style="fill:#fff" d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z" data-name="Right"/></svg></h2>
-            <div class="video-container">
-                <div class="video-wrapper">
-                    <video id="main-video" loop playsinline preload="none" poster="videos/poster.jpg" muted>
-                        <source src="videos/promo-video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="video-controls">
-                        <button class="unmute-button">🔇</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <!-- About Us Section -->
-        <div class="about-section">
-            <div class="about-container">
-                <h2>Who We Are</h2>
-                <p>Founded in 2015, Lumiya Events is an Event Planning and Production company with a passion for bringing Vision to Life. Our team of creative professionals brings together years of experience in Event Design & Execution, Logistics, and Hospitality to ensure every detail is handled with precision and flair.</p>
-            </div>
-        </div>
-        
+
         <!-- Footer Section -->
         <footer class="footer-section">
             <div class="footer-container">
@@ -136,53 +100,7 @@
             </div>
         </footer>
     </main>
-
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('main-video');
-    const unmuteButton = document.querySelector('.unmute-button');
-    let isMuted = true;
-    let hasInteracted = false;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                video.play().catch(e => console.log('Autoplay prevented:', e));
-                if (!hasInteracted) {
-                    video.muted = true;
-                }
-            } else {
-                if (!video.paused) video.pause();
-            }
-        });
-    }, { threshold: 0.5 });
-
-    observer.observe(video);
-
-    unmuteButton.addEventListener('click', () => {
-        isMuted = !isMuted;
-        video.muted = isMuted;
-        unmuteButton.classList.toggle('unmuted', !isMuted);
-        hasInteracted = true;
-        
-        if (!isMuted && video.paused) {
-            video.play().catch(e => console.log('Play failed:', e));
-        }
-    });
-
-    const loadObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                video.load();
-                loadObserver.unobserve(video);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    loadObserver.observe(video);
-    });
-    </script>
     <script src="script.js"></script>
 </body>
 </html>

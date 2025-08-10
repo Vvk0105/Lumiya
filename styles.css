@@ -1,11 +1,11 @@
 @font-face {
     font-family: Vogun;
-    src: url('Vogun-Medium.woff');
+    src: url('fonts/Vogun-Medium.woff');
 }
 
 @font-face {
     font-family: PlusJakartaSans;
-    src: url('PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+    src: url('fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
 }
 
 * {
@@ -41,6 +41,7 @@ nav {
     position: fixed;
     z-index: 1000;
     width: 100%;
+    background-color: #000;
 }
 
 .nav-container {
@@ -648,7 +649,7 @@ nav {
 
 /* social event styles  */
 .social-events {
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
 }
 
 .social-events-content h2{
@@ -733,7 +734,7 @@ nav {
 /* corporate-gift design  */
 
 .corporate-gifts {
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
 }
 
 .corporate-gifts-content h2{
@@ -780,6 +781,173 @@ nav {
     grid-column: 6;
     grid-row: 1;
 }
+
+/* Ambassador Page Styles */
+.ambassador-hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.ambassador-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    gap: 4rem;
+    z-index: 2;
+}
+
+.form-container {
+    /* max-width: 500px; */
+    /* background: rgba(0, 0, 0, 0.7); */
+    padding: 3rem;
+    border-radius: 15px;
+    /* backdrop-filter: blur(10px); */
+}
+
+.form-container h1 {
+    font-family: PlusJakartaSans;
+    font-size: 4.6rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+#ambassador-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1rem 1rem;
+    background: transparent;
+    background-color: #C5C5C559;
+    border-radius: 10px;
+    color: white;
+    font-family: PlusJakartaSans;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-bottom-color: white;
+}
+
+.form-group label {
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: PlusJakartaSans;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    top: -0.5rem;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.submit-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: Vogun;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.submit-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
+@media (max-width: 1024px) {
+    .ambassador-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .form-container
+    {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-container h1,
+    .contact-info h2 {
+        font-size: 2.5rem;
+    }
+    
+    .form-container {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container h1,
+    .contact-info h2 {
+        font-size: 2rem;
+    }
+    
+    .form-container {
+        padding: 1.5rem;
+    }
+}
+
 /* Footer Section Styles */
 .footer-section {
     background-color: black;
