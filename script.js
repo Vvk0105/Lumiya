@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
   
-  // Only initialize Locomotive Scroll on desktop
   let scroll;
   if (!isMobile) {
     scroll = new LocomotiveScroll({
@@ -9,18 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
       smooth: true,
       multiplier: 0.8,
       smartphone: {
-        smooth: false // Disable on mobile
+        smooth: false
       }
     });
   }
 
 
-  // Update scroll instance
   function updateScroll() {
     if (scroll) scroll.update();
   }
 
-  // Logo setup
   const logos = [
     { src: 'images/logos/lic.png', alt: 'LIC' },
     { src: 'images/logos/ntc.png', alt: 'NTC' },
