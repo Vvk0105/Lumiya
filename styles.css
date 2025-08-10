@@ -3,6 +3,11 @@
     src: url('Vogun-Medium.woff');
 }
 
+@font-face {
+    font-family: PlusJakartaSans;
+    src: url('PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -51,9 +56,10 @@ nav {
 }
 
 .nav-link {
+    font-family: PlusJakartaSans;
     color: #fff;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 0.025em;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -111,6 +117,7 @@ nav {
 }
 
 .banner p {
+    font-family: PlusJakartaSans;
     font-size: 1.3rem;
     max-width: 600px;
     margin-bottom: 3rem;
@@ -290,8 +297,15 @@ nav {
 }
 
 .video-section h2 {
-    text-align: end;
-    margin: 2rem 9rem;
+    margin: 2rem 6rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
+}
+
+.video-section svg {
+    width: 30px;
 }
 
 .video-container {
@@ -345,4 +359,142 @@ nav {
 
 .play-button:hover {
     background-color: rgba(255,255,255,0.3);
+}
+
+/* About Us Section Styles */
+.about-section {
+    background-image: url('images/bottom-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 2rem;
+    color: #fff;
+    position: relative;
+    margin-top: -50px; /* Pulls the section up to overlap with footer */
+    z-index: 1; /* Ensures content stays above footer */
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: -1; 
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.about-container h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.about-container p {
+    font-family: PlusJakartaSans;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+/* Footer Section Styles */
+.footer-section {
+    background-color: black;
+    color: #fff;
+    padding: 6rem 2rem 2rem;
+    border-top-left-radius: 115px;
+    border-top-right-radius: 115px;
+    position: relative;
+    z-index: 2;
+    margin-top: -100px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* .footer-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-right {
+    flex: 1;
+    min-width: 300px;
+} */
+
+.footer-logo {
+    width: 240px;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-links svg {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover svg {
+    transform: scale(1.1);
+}
+
+.contact-info a, 
+.contact-info p {
+    font-family: PlusJakartaSans;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+.copyright {
+    font-family: PlusJakartaSans;
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+}
+
+@media (max-width: 768px) {
+    .about-container h2 {
+        font-size: 2.5rem;
+    }
+    
+    .about-container p {
+        font-size: 1rem;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+    }
+    
+    .footer-left, .footer-right {
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
 }
