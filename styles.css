@@ -644,6 +644,97 @@ nav {
     }
 }
 
+/* social event styles  */
+.social-events {
+    background-color: #000;
+    padding: 4rem 2rem;
+    color: #fff;
+}
+
+.social-events-content h2{
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.social-events-content p{
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    font-family: PlusJakartaSans;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #fff;
+    text-align: justify;
+
+}
+
+/* social event grid layout  */
+.social-event-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 167px);
+    grid-template-rows: repeat(4, 300px);
+    gap: 15px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 5rem;
+}
+
+.social-event-1{
+    grid-column: 1 / 4;
+    grid-row: 1;
+}
+
+.social-event-2{
+    grid-column: 4 / 6;
+    grid-row: 1;
+}
+
+.social-event-3{
+    grid-column: 6;
+    grid-row: 1;
+}
+
+.social-event-4{
+    grid-column: 1/3;
+    grid-row: 2;
+}
+
+.social-event-5{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.social-event-6{
+    grid-column: 4/7;
+    grid-row: 2;
+}
+
+.social-event-7{
+    grid-column: 1 / 4;
+    grid-row: 3;
+}
+
+.social-event-8{
+    grid-column: 4/6;
+    grid-row: 3;
+}
+
+.social-event-9{
+    grid-column: 6;
+    grid-row: 3;
+}
+
+.social-event-10{
+    grid-column: 1/7;
+    grid-row: 4;
+}
+
+/* corporate-gift design  */
+
+
+
 /* Footer Section Styles */
 .footer-section {
     background-color: black;
