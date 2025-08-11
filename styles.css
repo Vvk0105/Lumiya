@@ -94,7 +94,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/banner1.jpg');
+    background-image: var(--banner-bg, url('images/banner1.jpg'));
     -webkit-mask-image: linear-gradient(#000, rgba(0, 0, 0, 0));
     mask-image: linear-gradient(#000, rgba(0, 0, 0, 0));
     background-size: cover;
@@ -155,6 +155,23 @@ nav {
 .banner button:hover {
     background-color: white;
     color: black;
+}
+
+.banner::before {
+    transition: background-image 1s ease-in-out;
+}
+
+.banner-content h1,
+.banner-content p {
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Scrolling text styles */
@@ -247,6 +264,27 @@ nav {
     width: 100%;
     overflow: hidden;
     margin: 3rem 0;
+}
+
+.logo-scroll-container {
+    position: relative;
+}
+
+.logo-scroll-container + .logo-scroll-container {
+    border-top: 1px dashed rgba(255,255,255,0.3);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    --dash-length: 50px;
+    --gap-length: 55px;
+}
+
+
+.logo-scroll-container{
+    border-image: repeating-linear-gradient(
+        to right,
+        #3e3e3e 0 var(--dash-length),
+        transparent var(--dash-length) calc(var(--dash-length) + var(--gap-length))
+    ) 1;
 }
 
 .logo-scroll-track {
@@ -412,7 +450,7 @@ nav {
 
 /* About Us Section Styles */
 .about-section {
-    background-image: url('images/bottom-banner.jpg');
+    background-image: url('images/bottom-banner.avif');
     background-size: cover;
     background-position: center;
     padding: 8rem 2rem;

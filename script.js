@@ -98,3 +98,66 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = [
+        {
+            title: "Corporate Events",
+            para: "MICE (Meetings, Incentives, Conferences & Exhibitions), Product Launches, Team-Building Retreat, Corporate Giftings - all executed with Professionalism and Style.",
+            images: ["images/ce1.avif", "images/ce2.avif"]
+        },
+        {
+            title: "Social Events",
+            para: "Award Nights, Holiday Events, Gala Dinner and Private Parties that leave lasting impressions.",
+            images: ["images/se1.avif", "images/se2.avif"]
+        },
+        {
+            title: "Corporate Gifts",
+            para: "Creative Concepts, custom décor and immersive experiences that reflect your Style and Story.",
+            images: ["images/cg1.avif", "images/cg2.avif"]
+        }
+    ];
+
+    let sectionIndex = 0;
+    let imageIndex = 0;
+
+    const h1 = document.querySelector('.banner-content h1');
+    const p = document.querySelector('.banner-content p');
+    const banner = document.querySelector('.banner');
+
+    function updateContent() {
+        const current = slides[sectionIndex];
+
+        banner.style.setProperty('--banner-bg', `url('${current.images[imageIndex]}')`);
+
+        if (imageIndex === 0) {
+            h1.classList.add('fade-out');
+            p.classList.add('fade-out');
+
+            setTimeout(() => {
+                h1.textContent = current.title;
+                p.textContent = current.para;
+
+                h1.classList.remove('fade-out');
+                p.classList.remove('fade-out');
+                h1.classList.add('fade-in');
+                p.classList.add('fade-in');
+
+                setTimeout(() => {
+                    h1.classList.remove('fade-in');
+                    p.classList.remove('fade-in');
+                }, 600);
+            }, 600);
+        }
+
+        imageIndex++;
+        if (imageIndex >= current.images.length) {
+            imageIndex = 0;
+            sectionIndex = (sectionIndex + 1) % slides.length;
+        }
+    }
+
+    updateContent();
+
+    setInterval(updateContent, 5000);
+});
