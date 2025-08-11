@@ -19,20 +19,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const logos = [
-    { src: 'images/logos/lic.png', alt: 'LIC' },
-    { src: 'images/logos/ntc.png', alt: 'NTC' },
-    { src: 'images/logos/kseb.png', alt: 'KSEB' },
-    { src: 'images/logos/malabar.png', alt: 'Malabar' },
-    { src: 'images/logos/gieh.png', alt: 'GIEH' },
-    { src: 'images/logos/ntc-award.png', alt: 'NTC Award' },
-    { src: 'images/logos/xitrof.png', alt: 'XITROF' },
-    { src: 'images/logos/nkcrr.png', alt: 'NKCRR' },
-    { src: 'images/logos/infopark.png', alt: 'Infopark' },
-    { src: 'images/logos/icfoss.png', alt: 'ICFÖSS' },
-    { src: 'images/logos/derrik.png', alt: 'Derrik' },
-    { src: 'images/logos/dermavue.png', alt: 'DermaVue' },
-    { src: 'images/logos/kim.png', alt: 'KIM' },
-    { src: 'images/logos/dernavue.png', alt: 'DERMAVUE' }
+    { src: 'images/logos/LIC.png', alt: 'LIC' },
+    { src: 'images/logos/derik.png', alt: 'NTC' },
+    { src: 'images/logos/dernavue.png', alt: 'KSEB' },
+    { src: 'images/logos/FAYA.png', alt: 'Malabar' },
+    { src: 'images/logos/GTECH.png', alt: 'GIEH' },
+    { src: 'images/logos/icfoss.png', alt: 'NTC Award' },
+    { src: 'images/logos/IMPCOPS.png', alt: 'XITROF' },
+    { src: 'images/logos/inapp.png', alt: 'NKCRR' },
+    { src: 'images/logos/INFOPARK.png', alt: 'Infopark' },
+    { src: 'images/logos/KIMS.png', alt: 'ICFÖSS' },
+    { src: 'images/logos/kseb.png', alt: 'Derrik' },
+    { src: 'images/logos/malabar.png', alt: 'DermaVue' },
+    { src: 'images/logos/MOT.png', alt: 'KIM' },
+    { src: 'images/logos/nims.png', alt: 'DERMAVUE' },
+    { src: 'images/logos/nkorr.png', alt: 'DERMAVUE' },
+    { src: 'images/logos/PRS.png', alt: 'DERMAVUE' },
+    { src: 'images/logos/TECHNOPARK.png', alt: 'TECHNOPARK' },
+    { src: 'images/logos/techversant.png', alt: 'TECHVERSANT' },
+    { src: 'images/logos/xmor.png', alt: 'XMOR' },
+
   ];
 
   function createLogoElements(container, count = 2) {
