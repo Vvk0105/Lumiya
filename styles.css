@@ -227,6 +227,49 @@ nav {
 .banner-content p {
     transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
+@media (max-width: 1024px) {
+    .banner h1 {
+        font-size: 3rem;
+    }
+    
+    .banner p {
+        font-size: 1.1rem;
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+    
+    .banner p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+    
+    .scrolling-text-container {
+        margin-top: -8rem;
+    }
+    
+    .scrolling-text h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 2rem;
+    }
+    
+    .banner button {
+        padding: 0.8rem 2rem;
+    }
+    
+    .scrolling-text-container {
+        margin-top: -5rem;
+    }
+}
 .fade-out {
     opacity: 0;
     transform: translateY(-10px);
@@ -406,6 +449,17 @@ nav {
     }
 }
 
+@media (max-width: 768px) {
+    .logo-item {
+        min-width: 100px;
+        height: 60px;
+    }
+    
+    .associated-container h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+}
 /* Video Section Styles */
 .video-section {
     padding: 5rem 0;
@@ -509,6 +563,16 @@ nav {
 .unmute-button.unmuted::before {
     content: "🔊";
 }
+@media (max-width: 768px) {
+    .video-section h2 {
+        margin: 2rem;
+        justify-content: center;
+    }
+    
+    .video-container {
+        padding: 0 1rem;
+    }
+}
 
 /* About Us Section Styles */
 .about-section {
@@ -552,6 +616,19 @@ nav {
     font-size: 1.2rem;
     line-height: 1.8;
     font-weight: 300;
+}
+@media (max-width: 768px) {
+    .about-section {
+        padding: 4rem 1rem;
+    }
+    
+    .about-container h2 {
+        font-size: 2.5rem;
+    }
+    
+    .about-container p {
+        font-size: 1rem;
+    }
 }
 
 /* Service Page Styles */
@@ -1344,5 +1421,20 @@ nav {
     
     .social-links {
         justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-content {
+        padding: 0 1rem;
+    }
+    
+    .associated-container,
+    .video-container {
+        padding: 0 1rem;
+    }
+    
+    .copyright p {
+        font-size: 0.8rem;
     }
 }
