@@ -462,7 +462,7 @@ nav {
 }
 /* Video Section Styles */
 .video-section {
-    /* padding: 5rem 0; */
+    padding-bottom: 5rem;
     background-color: #000;
 }
 
