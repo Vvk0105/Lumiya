@@ -25,20 +25,20 @@
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="services.html" class="nav-link">Services</a>
-                <a href="ambassador.html" class="nav-link">Ambassador</a>
-                <a href="contact.html" class="nav-link">Contacts</a>
+                <a href="ambassador.html" class="nav-link">Join Our Team</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
             </div>
         </div>
     </nav>
     <main id="main-scroll-container" data-scroll-container>
         <div class="ambassador-hero">
-            <div class="video-background">
+            <!-- <div class="video-background">
                 <video autoplay muted loop playsinline>
                     <source src="videos/promo-video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-overlay"></div>
-            </div>
+            </div> -->
             
             <div class="ambassador-content">
                 <div class="form-container">
@@ -46,20 +46,31 @@
                     <form id="ambassador-form">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Enter your name*" required>
-                            <!-- <label for="name">Enter your name*</label> -->
                         </div>
                         <div class="form-group">
                             <input type="email" id="email" name="email" placeholder="Enter your Email ID*" required>
-                            <!-- <label for="email">Enter your Email ID*</label> -->
                         </div>
                         <div class="form-group">
                             <input type="tel" id="phone" name="phone" placeholder="Enter your Phone number*" required>
-                            <!-- <label for="phone">Enter your Phone number</label> -->
                         </div>
                         <div class="form-group">
                             <input type="text" id="address" name="address" placeholder="Enter your Address*" required>
-                            <!-- <label for="phone">Enter your Phone number</label> -->
                         </div>
+                        <div class="form-group">
+                            <input type="text" id="previous_experience" name="previous_experience" placeholder="Previous Experience*" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="short_description" name="short_description" placeholder="Short Description*" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="job_type">Are you looking for</label>
+                            <select id="job_type" name="job_type" class="form-group-select" required>
+                                <option class="form-group-option" value="" disabled selected>Select one of the options</option>
+                                <option class="form-group-option" value="part_time">Part Time Job</option>
+                                <option class="form-group-option" value="full_time">Full Time Job</option>
+                            </select>
+                        </div>
+                        
                         <button type="submit" class="submit-btn">Submit</button>
                     </form>
                 </div>

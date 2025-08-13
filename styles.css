@@ -1103,7 +1103,7 @@ nav {
 /* Ambassador Page Styles */
 .ambassador-hero {
     position: relative;
-    height: 100vh;
+    height: 130vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1149,10 +1149,10 @@ nav {
 
 .form-container {
     /* max-width: 500px; */
-    /* background: rgba(0, 0, 0, 0.7); */
+    background: rgba(0, 0, 0, 0.7);
     padding: 3rem;
     border-radius: 15px;
-    /* backdrop-filter: blur(10px); */
+    backdrop-filter: blur(10px);
 }
 
 .form-container h1 {
@@ -1182,6 +1182,15 @@ nav {
     top: -0.5rem;
     font-size: 0.8rem;
     color: white;
+}
+.form-group-select,.form-group-option{
+    padding: 10px;
+    background: #111;
+    color: white;
+    font-family: vogun;
+    font-size: 1rem;
+    border: 1px solid #C5C5C559;
+    border-radius: 14px;
 }
 /* 
 .submit-btn {
