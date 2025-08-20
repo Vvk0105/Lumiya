@@ -937,13 +937,6 @@ nav {
     line-height: 1.1;
 }
 
-@media (max-width: 768px) {
-    .social-events-content h2{
-        font-size: 3rem;
-    }
-
-}
-
 .social-events-content p{
     max-width: 1000px;
     margin: 3rem auto;
@@ -953,6 +946,16 @@ nav {
     line-height: 1.8;
     color: #fff;
     text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .social-events-content h2{
+        font-size: 3rem;
+    }
+
+    .social-events-content p{
+    text-align: start;
+}
 }
 
 /* social event grid layout  */
